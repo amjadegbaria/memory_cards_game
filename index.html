@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Memory Card Game</title>
+</head>
+<body >
+    <div id="game" class="game">
+        <div id="toolbar" class="toolbar">
+            <span>Level: </span>
+            <select id="levels">
+                <option value="EASY">Easy</option>
+                <option value="MEDIUM">Medium</option>
+                <option value="HARD">Hard</option>
+            </select>
+            <span>Theme: </span>
+            <select id="themes">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+            </select>
+            <span>Shapes: </span>
+            <select id="shapes">
+                <option value="regular">Regular</option>
+                <option value="circular">Circular</option>
+            </select>
+            <button id="start" type="button">Start</button>
+        </div>
+        <div id="scores" class="scores invisible">
+            <span>Scores: </span>
+            <span>Wrong guesses : </span>
+        </div>
+        <table id="board" class="board"></table>
+        <script type="module" src="./utils.js"></script>
+    </div>
+    <div id="win-modal" class="win-modal invisible">
+        <div class="modal-content">
+            <div class="congrats">Congrats!! You Won!!!</div>
+            <div>Name: </div>
+            <input id="name"/>
+            <button id="new-game">New game</button>
+        </div>
+    </div>
+    <table id="winners-table" class="winners-table">
+        <tbody id="winners-table-body">
+            <tr>
+                <th>Name</th>
+                <th>Score</th>
+            </tr>
+        </tbody>
+
+    </table>
+</body>
+</html>

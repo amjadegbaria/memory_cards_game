@@ -1,0 +1,169 @@
+html {
+    height: 100%;
+}
+body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.game {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.game.dark {
+    background-color: black;
+}
+
+.board.invisible {
+    visibility: collapse;
+}
+
+.game.paused {
+    pointer-events: none;
+}
+.toolbar {
+    font-size: x-large;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: deepskyblue;
+    border-radius: 5px;
+}
+
+.toolbar select {
+    margin: 0 20px;
+    font-size: x-large;
+}
+
+.toolbar button {
+    width: 100px;
+    height: 100%;
+    font-size: x-large;
+    border-radius: 2px;
+    border: 1px dashed gray;
+}
+
+
+.flipCard {
+    transform: rotateY(180deg);
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px;
+}
+.flip-card.circular,
+.flip-card.circular .flip-card-back,
+.flip-card.circular .flip-card-front,
+.flip-card.circular img {
+    border-radius: 50px;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card-inner.picked {
+    transform: rotateY(180deg);
+    pointer-events: none;
+}
+
+.flip-card-inner.disabled {
+    pointer-events: none;
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flip-card-back {
+    background-color: #bbb;
+    color: black;
+}
+
+.flip-card-front {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.scores.invisible {
+    visibility: hidden;
+}
+
+.win-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.2);
+    justify-content: center;
+
+}
+
+.win-modal.invisible {
+    visibility: hidden;
+}
+
+.modal-content {
+    border: 2px solid black;
+    border-radius: 5px;
+    background: white;
+    width: 30%;
+    z-index: 2;
+    padding: 10px;
+}
+
+.modal-content button {
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+    font-size: large;
+    flex-direction: column;
+    align-items: center;
+}
+.modal-content input {
+    display: flex;
+    margin-top: 10px;
+}
+.congrats {
+    font-size: x-large;
+    color: brown;
+    display: flex;
+    width: 100%;
+    text-align: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.winners-table {
+    width: 30%;
+    text-align: center;
+}
+
+.winners-table.invisible {
+    visibility: collapse;
+}
